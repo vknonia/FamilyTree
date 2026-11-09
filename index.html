@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Complete Family Tree</title>
+		
+		<!-- CSS file link -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body onclick="closeAllMenusOutside(event)">
+		<div class="tree-container" id="scrollContainer">
+            <div id="zoomWrapper">
+                <div class="tree-branch" id="treeMain"></div>
+            </div>
+		</div>
+		<script src="script.js"></script>
+		<script src="relation.js"></script>
+		<script>
+			let familyData = null; // ग्लोबल वेरिएबल
+			fetch("familyData.json")
+                .then((response) => {
+                    if (!response.ok) throw new Error("JSON file load nahi hui");
+                    return response.json();
+                })
+			    .then((data) => {
+			        familyData = data;
+			        // डेटा लोड होने के बाद ट्री रेंडर करें
+			        document.getElementById("treeMain").innerHTML = buildRenderTree(familyData);
+			        updateTransform();
+			        setTimeout(() => {
+			            makeHeadAndScale("Bablu Nonia");
+			        }, 150);
+			    })
+			    .catch((error) => console.error("JSON लोड करने में समस्या:", error));
+        </script>
+    </body>
+  </html>
+  
