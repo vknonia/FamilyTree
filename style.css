@@ -1,0 +1,437 @@
+/* ===================================================
+   1. GLOBAL & LAYOUT SETUP
+   =================================================== */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: none;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* फुलस्क्रीन ट्री कंटेनर */
+.tree-container, #scrollContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #ffffff;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.tree-container:active, #scrollContainer:active {
+    cursor: grabbing;
+}
+
+#zoomWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    transform-origin: 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+}
+
+
+/* ===================================================
+   2. TREE STRUCTURE & BRANCHES
+   =================================================== */
+.tree-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.nodes-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 35px;
+}
+
+.node-branch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+
+/* ===================================================
+   3. CURVED BRANCHES & CONNECTING LINES
+   =================================================== */
+/* ऊपर की कनेक्टिंग लाइन */
+.node-branch-item::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    height: 35px;
+    width: 50%;
+    border-top: 3px solid #777777;
+    z-index: 1;
+}
+
+/* बीच वाले बच्चों के लिए सीधी नीचे उतरने वाली लाइन */
+.node-branch-item::after {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 35px;
+    background-color: #777777;
+    z-index: 1;
+}
+
+/* बाएँ कोने (पहले बच्चे) का गोल मोड़ */
+.node-branch-item:first-child::before {
+    left: 50%;
+    border-left: 3px solid #777777;
+    border-top-left-radius: 14px;
+}
+.node-branch-item:first-child::after {
+    display: none;
+}
+
+/* दाएँ कोने (आखिरी बच्चे) का गोल मोड़ */
+.node-branch-item:last-child::before {
+    right: 50%;
+    border-right: 3px solid #777777;
+    border-top-right-radius: 14px;
+}
+.node-branch-item:last-child::after {
+    display: none;
+}
+
+/* बीच वाले बच्चों की ऊपर की सपाट लाइन */
+.node-branch-item:not(:first-child):not(:last-child)::before {
+    width: 100%;
+    left: 0;
+    border-top: 3px solid #777777;
+}
+
+/* अगर केवल एक ही बच्चा हो तो बिना मोड़ के सीधी लाइन */
+.node-branch-item:only-child::before {
+    display: none;
+}
+.node-branch-item:only-child::after {
+    display: block;
+}
+
+/* सबसे ऊपर रूट नोड पर ऊपर से कोई लाइन नहीं जुड़ेगी */
+#treeMain > .node-branch-item::before,
+#treeMain > .node-branch-item::after {
+    display: none;
+}
+
+
+/* ===================================================
+   4. ACTIVE / SELECTED LINE STYLES
+   =================================================== */
+.stem-down.line-active {
+    background-color: #e67e22 !important;
+}
+
+.node-branch-item.line-active::before {
+    border-color: #e67e22 !important;
+}
+
+.node-branch-item.line-active::after {
+    background-color: #e67e22 !important;
+}
+
+
+/* ===================================================
+   5. BOXES, PROFILES & CARDS
+   =================================================== */
+.couple-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.couple-row {
+    display: flex;
+    gap: 10px;
+    background: #fdfdfd;
+    padding: 6px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 16px;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.couple-row.child-size-large {
+    gap: 12px;
+    padding: 8px;
+    border-color: #636363;
+    box-shadow: 0 4px 15px rgba(45, 50, 0, 0.8);
+}
+
+.couple-row.child-size-large .ratio-box {
+    width: 80px;
+}
+
+.couple-row.child-size-large .profile-name {
+    font-size: 10px;
+}
+
+.stem-down {
+    width: 3px;
+    height: 35px;
+    background-color: #777777;
+    z-index: 1;
+}
+
+.ratio-box {
+    width: 75px;
+    aspect-ratio: 3 / 4;
+    padding: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.male-box {
+    border: 2px solid #1a73e8;
+    background-color: #f0f6ff;
+}
+
+.female-box {
+    border: 2px solid #e91e63;
+    background-color: #fff0f5;
+}
+
+.male-box.highlight-active {
+    border: 2px solid #3b82f6 !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.7);
+}
+
+.female-box.highlight-active {
+    border: 2px solid #ec4899 !important;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.7);
+}
+
+
+/* ===================================================
+   6. AVATARS & PROFILE NAMES
+   =================================================== */
+.image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    background-color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.image-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.avatar-fallback-head {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    position: absolute;
+    top: 15%;
+}
+
+.avatar-fallback-body {
+    width: 85%;
+    height: 45%;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    bottom: -5%;
+}
+
+.male-box .avatar-fallback-head,
+.male-box .avatar-fallback-body {
+    background-color: #93c5fd;
+}
+
+.female-box .avatar-fallback-head,
+.female-box .avatar-fallback-body {
+    background-color: #f9a8d4;
+}
+
+.profile-name {
+    font-size: 9px;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 1.1;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    pointer-events: none;
+}
+
+.male-box .profile-name {
+    color: #1a73e8;
+}
+
+.female-box .profile-name {
+    color: #e91e63;
+}
+
+
+/* ===================================================
+   7. BUTTONS & INTERACTIVE ELEMENTS
+   =================================================== */
+.toggle-btn {
+    position: absolute;
+    bottom: -8px;
+    background-color: #555555;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.collapsed-children {
+    display: none;
+}
+
+.details-corner-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #3E3E3E;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6F6F6F;
+}
+
+.head-btn {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid #e67e22;
+    border-radius: 30%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #F2AA11;
+  top: -5;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Half overlap top border */
+  padding: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.30);
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.hide-head-btn {
+    display: none;
+}
+
+
+/* ===================================================
+   8. DIALOGS & OVERLAYS
+   =================================================== */
+.dialog-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.dialog-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.dialog-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dialog-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e67e22;
+}
