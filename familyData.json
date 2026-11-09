@@ -1,0 +1,273 @@
+{
+  "name": "Parmeshwar Mehta",
+  "gender": "Male",
+  "status": "Dead",
+  "imagec": "img/parmeshwar.jpg",
+  "wife": {
+    "name": "unknown",
+    "gender": "Female",
+    "status": "Dead",
+    "image": ""
+  },
+  "children": [
+    {
+      "name": "Ramswaroop Prasad Mehta",
+      "gender": "Male",
+      "imagec": "img/ramswaroop.jpg",
+      "status": "Dead in 2004",
+      "wife": {
+        "name": "Maya Devi",
+        "gender": "Female",
+        "status": "Dead",
+        "imagec": "img/maya.jpg"
+      },
+      "children": [
+        {
+          "name": "Hari Shankar Nonia",
+          "gender": "Male",
+          "image": "img/hari.jpg",
+          "wife": {
+            "name": "Parwati Devi",
+            "gender": "Female",
+            "image": "img/parwati.jpg"
+          },
+          "children": [
+            {
+              "name": "Ganesh Prasad",
+              "gender": "Male",
+              "image": "img/ganesh.jpg",
+              "wife": {
+                "name": "Suman Devi",
+                "gender": "Female",
+                "image": "img/ganesh's_wife.jpg"
+              },
+              "children": [
+                { "name": "Ganesh Ka Pehla Beta", "gender": "Male", "image": "" },
+                { "name": "Ganesh Ka Doosra Beta", "gender": "Male", "image": "" },
+                { "name": "Ganesh Ki Pehla Beti ", "gender": "Female", "image": "" },
+                { "name": "Ganesh Ki Doosra Beti", "gender": "Female", "image": "" }
+              ]
+            },
+            {
+              "name": "Dinesh Prasad",
+              "gender": "Male",
+              "image": "img/dinesh.jpg",
+              "wife": {
+                "name": "Komal Devi",
+                "gender": "Female",
+                "image": "img/komal.jpg"
+              },
+              "children": [
+                { "name": "Dinesh child", "gender": "Male", "image": "img/Dinesh's child.jpg" }
+              ]
+            },
+            {
+              "name": "Sangita Mahato",
+              "gender": "Female",
+              "image": "img/sangita.jpg",
+              "husband": {
+                "name": "Dinesh Mahato",
+                "gender": "Male",
+                "image": "img/dineshh.jpg"
+              },
+              "children": []
+            },
+            {
+              "name": "Hari Shankar Ki Doosri Beti",
+              "gender": "Female",
+              "image": "img/beti2.jpg",
+              "husband": {
+                "name": "Hari Shankar Ka Doosra Damad",
+                "gender": "Male",
+                "image": ""
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Bhola Ramswaroop Nonia",
+          "gender": "Male",
+          "image": "img/bhola.jpg",
+          "wife": {
+            "name": "Lakshmi Devi",
+            "gender": "Female",
+            "image": "img/lakshmi.jpg"
+          },
+          "children": [
+            {
+              "name": "Rajesh Chauhan",
+              "gender": "Male",
+              "image": "img/rajesh.jpg",
+              "wife": {
+                "name": "Suhani Kumari",
+                "gender": "Female",
+                "image": "img/suhani.jpg"
+              },
+              "children": [
+                { "name": "Rajesh Ka Beta", "gender": "Male", "image": "img/rajesh-beta.jpg" },
+                { "name": "Rajesh Ki Beti", "gender": "Female", "image": "img/rajesh-beti.jpg" }
+              ]
+            },
+            {
+              "name": "Sarita Devi",
+              "gender": "Female",
+              "image": "img/sarita.jpg",
+              "husband": {
+                "name": "Vijay Nonia",
+                "gender": "Male",
+                "image": "img/vijay.jpg"
+              },
+              "children": [
+                {
+                  "name": "Shubhash",
+                  "gender": "Male",
+                  "image": "img/Shubhash.jpg",
+                  "wife": {
+                    "name": "Shubhash wife",
+                    "gender": "Female",
+                    "imagec": "img/Shubhash wife.jpg"
+                  }
+                },
+                {
+                  "name": "Shubham",
+                  "gender": "Male",
+                  "image": "img/shubham.jpg"
+                },
+                {
+                  "name": "Khushboo",
+                  "gender": "Female",
+                  "image": "img/khushboo.jpg",
+                  "husband": {
+                    "name": "Jitendra Chauhan",
+                    "gender": "Male",
+                    "image": "img/jitendra.jpg"
+                  },
+                  "children": [
+                    { "name": "ayush Kumar", "gender": "Male", "image": "img/ayush.jpg" },
+                    { "name": "kitu Kumar", "gender": "Male", "image": "img/ayushbhai.jpg" }
+                  ]
+                },
+                {
+                  "name": "Gudiya",
+                  "gender": "Female",
+                  "image": "img/gudiya.jpg",
+                  "husband": {
+                    "name": "Rahul Chauhan",
+                    "gender": "Male",
+                    "image": "img/rahul.jpg"
+                  },
+                  "children": [
+                    { "name": "Riyanash", "gender": "Male", "imagec": "img/Riyanash.jpg" },
+                    { "name": "Shubhansh", "gender": "Male", "imagec": "img/Shubhansh.jpg" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Rina Devi",
+              "gender": "Female",
+              "image": "img/rina.jpg",
+              "husband": {
+                "name": "Nand Kishor",
+                "gender": "Male",
+                "image": "img/nandkishor.jpg"
+              },
+              "children": [
+                { "name": "Ritik", "gender": "Male", "imagec": "img/#.jpg" },
+                { "name": "karina", "gender": "Female", "image": "img/karina.jpg" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Suresh Nonia",
+          "gender": "Male",
+          "imagec": "img/suresh.jpg",
+          "wife": {
+            "name": "Sita Devi",
+            "gender": "Female",
+            "imagec": "img/sita.jpg"
+          },
+          "children": [
+            { "name": "Saurab Kumar", "gender": "Male", "imagec": "img/saurab.jpg" },
+            { "name": "Shekhar Kumar", "gender": "Male", "image": "img/shekhar.jpg" }
+          ]
+        },
+        {
+          "name": "Bablu Nonia",
+          "gender": "Male",
+          "image": "img/bablu.jpg",
+          "wife": {
+            "name": "Radha Devi",
+            "gender": "Female",
+            "image": "img/radha.jpg"
+          },
+          "children": [
+            {
+              "name": "Gautam Kumar",
+              "gender": "Male",
+              "image": "img/gautam.jpg",
+              "dob": "20-01-1995",
+              "wife": {
+                "name": "Shobha Devi",
+                "gender": "Female",
+                "image": "img/shobha.jpg",
+                "dob": "03/02/1998"
+              },
+              "children": [
+                { "name": "Gaurav Kumar", "gender": "Male", "image": "img/gaurav.jpg", "dob": "12/06/2017" },
+                { "name": "Lakki Kumar", "gender": "Male", "image": "img/lakki.jpg", "dob": "06/05/2020" },
+                { "name": "Khushi Kumari", "gender": "Female", "image": "img/khushi.jpg", "dob": "20/11/2022" }
+              ]
+            },
+            {
+              "name": "Vikram Chauhan",
+              "gender": "Male",
+              "image": "img/vikram.jpg",
+              "dob": "14-12-1996",
+              "wife": {
+                "name": "Priyanka Kumari",
+                "gender": "Female",
+                "image": "img/priyanka.jpg",
+                "dob": "29-05-1998"
+              },
+              "children": [
+                { "name": "Priyanshi Kumari", "gender": "Female", "image": "img/priyanshi.jpg", "dob": "21-11-2021" },
+                { "name": "anaya Chauhan", "gender": "Female", "image": "img/anaya.jpg", "dob": "06-10-2026" }
+              ]
+            },
+            { "name": "Vikas Kumar", "gender": "Male", "image": "img/vikas.jpg", "status": "", "dob": "02-07-2003" }
+          ]
+        },
+        {
+          "name": "Malati Devi",
+          "gender": "Female",
+          "imagec": "img/malati.jpg",
+          "husband": {
+            "name": "Shalendra",
+            "gender": "Male",
+            "imagec": "img/shalendra.jpg"
+          },
+          "children": [
+            { "name": "malti child", "gender": "Male", "imagec": "img/maltichild.jpg" },
+            { "name": "hrrjk", "gender": "Female", "imagec": "img/maltichild.jpg" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ram Baran Mehta",
+      "gender": "Male",
+      "status": "Dead",
+      "image": "",
+      "wife": {
+        "name": "baranwife",
+        "gender": "Female",
+        "status": "Dead",
+        "image": ""
+      },
+      "children": []
+    }
+  ]
+}
