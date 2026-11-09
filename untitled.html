@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Tree SVG</title>
+  <style>
+    .image-container {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* टेक्स्ट स्टाइलिंग */
+    .head-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      fill: #000000;
+      stroke: none;
+      text-anchor: middle;
+    }
+
+    .branch-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      fill: #222222;
+      stroke: none;
+      text-anchor: middle;
+    }
+
+    .child-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 600;
+      fill: #444444;
+      stroke: none;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <svg class="branch-illustration" viewBox="-25 -25 150 115" fill="none" stroke="#777777" stroke-linecap="round" stroke-linejoin="round">
+      
+      <!-- Top Trunk & Father: Bablu Nonia's Father -->
+      <path vector-effect="non-scaling-stroke" d="M 50 -15 C 50 -8, 50 -4, 50 0" stroke-width="3.5" />
+      <!-- Yहाँ पर पिता जी का नाम बदलें -->
+      <text x="50" y="-18" class="head-text" font-size="3.8">Ramswrup</text>
+
+      <!-- Main Trunk: Bablu Nonia -->
+      <path vector-effect="non-scaling-stroke" d="M 50 0 C 50 8, 49 14, 50 20" stroke-width="3" />
+      <text x="50" y="-2" class="branch-text" font-size="3.3">Bablu Nonia</text>
+
+      <!-- Primary Branches -->
+      <!-- Gautam Chauhan -->
+      <path vector-effect="non-scaling-stroke" d="M 50 20 C 38 24, 25 32, 18 55" stroke-width="2" />
+      <text x="20" y="28" class="branch-text" font-size="2.8">Gautam Chauhan</text>
+
+      <!-- Vikram Chauhan -->
+      <path vector-effect="non-scaling-stroke" d="M 50 20 C 62 24, 75 32, 82 55" stroke-width="2" />
+      <text x="80" y="28" class="branch-text" font-size="2.8">Vikram Chauhan</text>
+
+      <!-- Vikas Chauhan -->
+      <path vector-effect="non-scaling-stroke" d="M 50 20 C 48 30, 52 38, 50 48" stroke-width="1.8" />
+      <text x="50" y="34" class="branch-text" font-size="2.5">Vikas Chauhan</text>
+
+
+      <!-- GAUTAM'S 3 CHILDREN -->
+      <!-- Child 1: Gaurav -->
+      <path vector-effect="non-scaling-stroke" d="M 18 55 C 10 60, 2 65, -8 72" stroke-width="1.2" />
+      <text x="-8" y="77" class="child-text" font-size="2.2">Gaurav</text>
+
+      <!-- Child 2: Lakki -->
+      <path vector-effect="non-scaling-stroke" d="M 18 55 C 16 62, 12 68, 8 75" stroke-width="1.2" />
+      <text x="8" y="80" class="child-text" font-size="2.2">Lakki</text>
+
+      <!-- Child 3: Khushi -->
+      <path vector-effect="non-scaling-stroke" d="M 18 55 C 22 62, 24 68, 25 75" stroke-width="1.2" />
+      <text x="25" y="80" class="child-text" font-size="2.2">Khushi</text>
+
+
+      <!-- VIKRAM'S 1 CHILD -->
+      <!-- Child 1: Priyanshi -->
+      <path vector-effect="non-scaling-stroke" d="M 82 55 C 88 62, 92 68, 98 75" stroke-width="1.2" />
+      <text x="98" y="80" class="child-text" font-size="2.2">Priyanshi</text>
+
+
+      <!-- Secondary/Fine Twigs for visual details -->
+      <path vector-effect="non-scaling-stroke" d="M 50 38 C 42 46, 43 56, 40 68" stroke-width="1" />
+      <path vector-effect="non-scaling-stroke" d="M 50 38 C 58 46, 57 56, 60 68" stroke-width="1" />
+      <path vector-effect="non-scaling-stroke" d="M 40 68 C 38 72, 35 75, 33 78" stroke-width="0.5" />
+      <path vector-effect="non-scaling-stroke" d="M 60 68 C 62 72, 65 75, 67 78" stroke-width="0.5" />
+    </svg>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Curved Family Tree SVG</title>
+  <style>
+    .image-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    /* ऑर्गेनिक ट्री जैसी घुमावदार शाखाएँ */
+    .tree-branch {
+      stroke: #666666;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    /* टेक्स्ट स्टाइलिंग */
+    .gen-1 { font-family: system-ui, sans-serif; font-weight: 800; fill: #000000; font-size: 3.5px; text-anchor: middle; stroke: none; }
+    .gen-2 { font-family: system-ui, sans-serif; font-weight: 700; fill: #111111; font-size: 3.0px; text-anchor: middle; stroke: none; }
+    .gen-3 { font-family: system-ui, sans-serif; font-weight: 700; fill: #222222; font-size: 2.6px; text-anchor: middle; stroke: none; }
+    .gen-4 { font-family: system-ui, sans-serif; font-weight: 600; fill: #333333; font-size: 2.3px; text-anchor: middle; stroke: none; }
+    .gen-5 { font-family: system-ui, sans-serif; font-weight: 500; fill: #555555; font-size: 2.0px; text-anchor: middle; stroke: none; }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <svg class="branch-illustration" viewBox="-150 -35 340 190">
+      
+      <!-- GENERATION 1: Parmeshwar Mehta -->
+      <g>
+        <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 20 -25 C 20 -20, 20 -18, 20 -15" />
+        <text x="20" y="-27" class="gen-1">Parmeshwar Mehta</text>
+      </g>
+
+      <!-- GENERATION 2: Ramswaroop & Ram Baran (Curved Branches) -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 20 -15 C 20 -5, -50 -10, -50 0" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 20 -15 C 20 -5, 110 -10, 110 0" />
+
+      <!-- Ramswaroop Prasad Mehta -->
+      <text x="-50" y="-2" class="gen-2">Ramswaroop Prasad Mehta</text>
+      <text x="-50" y="2" class="gen-5" fill="#888">(w/ Maya Devi)</text>
+
+      <!-- Ram Baran Mehta -->
+      <text x="110" y="-2" class="gen-2">Ram Baran Mehta</text>
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 110 2 C 110 6, 110 9, 110 12" />
+      <text x="110" y="16" class="gen-5">...</text>
+
+
+      <!-- GENERATION 3: Ramswaroop's Children (Curved Branches) -->
+      <!-- Trunk down from Ramswaroop -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 4 C -50 9, -50 11, -50 15" />
+
+      <!-- Curved Branches to 5 Children -->
+      <!-- 1. Hari Shankar Nonia -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 15 C -50 22, -125 18, -125 28" />
+      <text x="-125" y="32" class="gen-3">Hari Shankar Nonia</text>
+      
+      <!-- 2. Bhola Ramswaroop Nonia -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 15 C -50 22, -75 18, -75 28" />
+      <text x="-75" y="32" class="gen-3">Bhola Ramswaroop</text>
+
+      <!-- 3. Suresh Nonia -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 15 C -50 22, -25 18, -25 28" />
+      <text x="-25" y="32" class="gen-3">Suresh Nonia</text>
+
+      <!-- 4. Bablu Nonia -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 15 C -50 22, 25 18, 25 28" />
+      <text x="25" y="32" class="gen-3">Bablu Nonia</text>
+
+      <!-- 5. Malati Devi -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -50 15 C -50 22, 75 18, 75 28" />
+      <text x="75" y="32" class="gen-3">Malati Devi</text>
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 75 34 C 75 38, 75 40, 75 44" />
+      <text x="75" y="48" class="gen-5">...</text>
+
+
+      <!-- GENERATION 4: Grandchildren (Curved Branches) -->
+
+      <!-- Hari Shankar's Children -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -125 34 C -125 40, -125 42, -125 46" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -125 46 C -125 50, -140 48, -140 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -125 46 C -125 50, -130 48, -130 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -125 46 C -125 50, -120 48, -120 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -125 46 C -125 50, -110 48, -110 55" />
+      
+      <text x="-140" y="59" class="gen-4">Ganesh</text>
+      <text x="-130" y="59" class="gen-4">Dinesh</text>
+      <text x="-120" y="59" class="gen-4">Sangita</text>
+      <text x="-110" y="59" class="gen-4">Beti 2</text>
+
+      <!-- Bhola Ramswaroop's Children -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -75 34 C -75 40, -75 42, -75 46" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -75 46 C -75 50, -90 48, -90 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -75 46 C -75 50, -75 48, -75 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -75 46 C -75 50, -60 48, -60 55" />
+
+      <text x="-90" y="59" class="gen-4">Rajesh Chauhan</text>
+      <text x="-75" y="59" class="gen-4">Sarita Devi</text>
+      <text x="-60" y="59" class="gen-4">Rina Devi</text>
+
+      <!-- Suresh Nonia's Children -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -25 34 C -25 40, -25 42, -25 46" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -25 46 C -25 50, -33 48, -33 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -25 46 C -25 50, -17 48, -17 55" />
+
+      <text x="-33" y="59" class="gen-4">Saurab</text>
+      <text x="-17" y="59" class="gen-4">Shekhar</text>
+
+      <!-- Bablu Nonia's Children -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 25 34 C 25 40, 25 42, 25 46" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 25 46 C 25 50, 5 48, 5 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 25 46 C 25 50, 25 48, 25 55" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 25 46 C 25 50, 45 48, 45 55" />
+
+      <text x="5" y="59" class="gen-4">Gautam Kumar</text>
+      <text x="25" y="59" class="gen-4">Vikas Kumar</text>
+      <text x="45" y="59" class="gen-4">Vikram Chauhan</text>
+
+
+      <!-- GENERATION 5: Great-Grandchildren (Curved Branches) -->
+
+      <!-- Ganesh's Kids -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -140 61 C -140 66, -140 68, -140 72" />
+      <text x="-140" y="76" class="gen-5">4 Children</text>
+
+      <!-- Sarita's Kids -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M -75 61 C -75 66, -75 68, -75 72" />
+      <text x="-75" y="76" class="gen-5">4 Children</text>
+
+      <!-- Gautam's Kids (Gaurav, Lakki, Khushi) -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 5 61 C 5 67, 5 69, 5 73" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 5 73 C 5 77, -5 75, -5 80" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 5 73 C 5 77, 5 75, 5 80" />
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 5 73 C 5 77, 15 75, 15 80" />
+
+      <text x="-5" y="84" class="gen-5">Gaurav</text>
+      <text x="5" y="84" class="gen-5">Lakki</text>
+      <text x="15" y="84" class="gen-5">Khushi</text>
+
+      <!-- Vikram's Kid (Priyanshi) -->
+      <path vector-effect="non-scaling-stroke" class="tree-branch" d="M 45 61 C 45 68, 45 74, 45 80" />
+      <text x="45" y="84" class="gen-5">Priyanshi</text>
+
+    </svg>
+  </div>
+
+</body>
+</html>
+
+
+
+/* --- 1. पुरानी सीधी Lines को Reset करें --- */
+.node-branch-item::before,
+.node-branch-item::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/* Base Top-Vertical Stem Line (Child के ऊपर जाने वाली लाइन) */
+.node-branch-item::before {
+    top: -35px;
+    left: 50%;
+    width: 2px;
+    height: 18px;
+    background-color: #777777;
+    transform: translateX(-50%);
+}
+
+#treeMain > .node-branch-item::before,
+#treeMain > .node-branch-item::after {
+    display: none;
+}
+
+/* --- 2. Curved Horizontal Connectors (पहली फ़ोटो जैसा घुमावदार लुक) --- */
+
+/* Horizontal connection bar */
+.node-branch-item::after {
+    top: -35px;
+    height: 18px;
+    border-top: 2px solid #777777;
+}
+
+/* बीच वाले (Middle) Nodes के लिए curved connection */
+.node-branch-item:not(:first-child):not(:last-child)::after {
+    left: 0;
+    width: 100%;
+}
+
+/* सब से पहला बच्चा (First Child) - Left Curve */
+.node-branch-item:first-child::after {
+    left: 50%;
+    width: 50%;
+    border-left: 2px solid #777777;
+    border-top-left-radius: 12px; /* ऊपर बाएँ कोने पर घुमाव (Curve) */
+}
+
+/* सब से आखिरी बच्चा (Last Child) - Right Curve */
+.node-branch-item:last-child::after {
+    right: 50%;
+    width: 50%;
+    border-right: 2px solid #777777;
+    border-top-right-radius: 12px; /* ऊपर दाएँ कोने पर घुमाव (Curve) */
+}
+
+/* इकलौता बच्चा (Single Child) - कोई horizontal line नहीं */
+.node-branch-item:only-child::after {
+    display: none;
+}
+
+/* --- 3. Parent Node से नीचे आने वाली Curved Line --- */
+.stem-down {
+    width: 2px;
+    height: 18px;
+    background-color: #777777;
+    margin: 0 auto;
+    z-index: 1;
+}
+
